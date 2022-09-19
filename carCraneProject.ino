@@ -71,18 +71,18 @@ void setup() {
 }
 
 void loop() {
-  //motorSpeed(0);
-  //secondArmPos(170); //position for picking up --> secondArmPos(170), mainArmPos(8)
-  //mainArmPos(8);
-  //secondArmPos(140);
-  //secondaryArm.write(30);
-  //mainArmPos(0);
-  //steeringArm.write(72 + 45);
-  //steeringArmPos(-45);
-  //moveTheBot();
-  //pickUpPos();
+  motorSpeed(0);
+  secondArmPos(170); //position for picking up --> secondArmPos(170), mainArmPos(8)
+  mainArmPos(8);
+  secondArmPos(140);
+  secondaryArm.write(30);
+  mainArmPos(0);
+  steeringArm.write(72 + 45);
+  steeringArmPos(-45);
+  moveTheBot();
+  pickUpPos();
   ultraSonicSensor();
-  /*
+  
   delay(5000) // 5 second delay before start
   while(numLegos < 2){
     if(checkBlockage()){ //if route is clear, go ahead
@@ -97,7 +97,6 @@ void loop() {
       }
     }
   }
-  */
   /*
   if(doneDidIt){
     delay(5000) //five second delay before start
@@ -217,70 +216,3 @@ long microsecondsToCentimeters(long microseconds)
 {
 return microseconds / 29 / 2;
 }
-
-
-
-
-
-/// CODE GRAVEYEARD ==========================================================================================================================================================
-
-
-
-
-
-/*
-void moveThreeVectors(){
-   //vector A
-    drivingArmPos();
-    delay(1000); //countdown delay
-    steeringArm.write(72 - 30); // 30 deg right steer
-    motorSpeed(255); //full speed forward
-    delay(1000); //turn for 1 second
-    steeringArm.write(72 - 0); //straighten steering
-    motorSpeed(255);
-    delay(legLength); //travel forward legLength seconds
-    motorSpeed(0); // stop at end of Vector A
-    pickUpPos(); // begin pickUp
-    delay(1000); //replace with pickup animation
-    holdingPos();
-    motorSpeed(-255); //travel backwards full speed
-    delay(legLength * 1.23); //travel backwards
-    steeringArm.write(72 - 30); // 30 deg right steer
-    delay(1000); // turn for 1 seconds 
-    steeringArm.write(72 - 0); //at this point, robot is at original pos
-    motorSpeed(0); // stop, original pos
-
-    //vector B
-    drivingArmPos();
-    delay(1000); //countdown delay
-    steeringArm.write(72); // go straight
-    motorSpeed(255); // full speed forward
-    delay(legLength + 1000); // d = vt
-    motorSpeed(0); // stop                                    //robot at end of vector B
-    pickUpPos();
-    delay(1000); // replace with claw function
-    holdingPos();
-    motorSpeed(-255); //backwards full speed
-    delay(legLength + 1000); // -d = -vt
-    motorSpeed(0); // at original pos
-
-    //vector C
-    drivingArmPos();
-    delay(1000); // countdown delay
-    steeringArm.write(72 + 30); //30 deg left steer
-    motorSpeed(255); //full speed forward
-    delay(1000); //turn for 1 second
-    steeringArm.write(72);
-    delay(legLength); //travel forward leglength seconds
-    motorSpeed(0); //at end of vector C, stop
-    pickUpPos();
-    delay(1000); //replace with pickup animation
-    holdingPos();
-    motorSpeed(-255); //travel backwards full speed
-    delay(legLength * 1.23); //travel back (motor moves slower backwards)
-    steeringArm.write(72 + 30); // 30 deg left steer
-    delay(1000); // turn for 1 seconds
-    steeringArm.write(72 - 0); //at this point, robot is at original pos
-    motorSpeed(0); //stop original pos
-}
-*/
